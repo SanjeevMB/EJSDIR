@@ -6,15 +6,15 @@
     <title>Instagram</title>
 </head>
 <body>
-    <h3>Welcome to the @<%= userName.name %> Instagram</h3>
-    <button>Follower : <%= userName.followers %></button>
-    <button>Followings : <%= userName.following %></button>
+    <h3>Welcome to the @<%= user.name %> Instagram</h3>
+    <button>Follower : <%= user.followers %></button>
+    <button>Followings : <%= user.following %></button>
     <hr>
-    <% for (let i = 0; i < userName.posts.length; i++)  { %>
-        <img src="<%= userName.posts[i].image %>" alt="post" width="300px" height="300px">
+    <% for (let i = 0; i < user.posts.length; i++)  { %>
+        <img src="<%= user.posts[i].image %>" alt="post" width="300px" height="300px">
         <br>
-        <span>Likes: <%= userName.posts[i].likes %></span>
-        <span>Likes: <%= userName.posts[i].comments %></span>
+        <span>Likes: <%= user.posts[i].likes %></span>
+        <span>Likes: <%= user.posts[i].comments %></span>
         <br>          
    <% } %>
 </body>
