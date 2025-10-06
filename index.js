@@ -18,14 +18,19 @@ app.get('/dice', (req, res) => {
 
 app.get('/ig/:userName', (req, res) => {
     let instaData = require('./data.json');
-    let user = req.params.userName;
-    let userName = instaData[user];
-    if (!userName) {
+    let { userName } = req.params;
+    let user = instaData[userName];
+    if (!user) {
         res.render('invalid.ejs');
     } else {
-        res.render('instagram.ejs', { userName: userName });
+        res.render('instagram.ejs', { user });
     }
     
+});
+
+app.get('/:user/:age', (req, res) => {
+    let { user, age } = req.params;
+    res.send(`Hello ${user}, you are ${age} years old`);
 });
 
 app.listen(port, () => {
